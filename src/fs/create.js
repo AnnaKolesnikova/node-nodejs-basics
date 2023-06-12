@@ -1,5 +1,16 @@
+import { appendFile } from "node:fs/promises";
+import { getPathFromFiles } from "./getPath.js";
+import { errorMsg } from "./getErrorMsg.js";
+
 const create = async () => {
-    // Write your code here 
+  const filesSrc = getPathFromFiles(import.meta.url, "fresh.txt");
+  const fileContent = "I am fresh and young";
+
+  try {
+    await appendFile(filesSrc, fileContent, { flag: "wx" });
+  } catch (err) {
+    throw new Error(errorMsg);
+  }
 };
 
 await create();
