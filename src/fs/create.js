@@ -1,6 +1,6 @@
 import { appendFile } from "node:fs/promises";
-import { getPathFromFiles } from "./getPath.js";
-import { errorMsg } from "./getErrorMsg.js";
+import { getPathFromFiles } from "../getPath.js";
+import { errorMsg } from "../getErrorMsg.js";
 
 const create = async () => {
   const filesSrc = getPathFromFiles(import.meta.url, "fresh.txt");

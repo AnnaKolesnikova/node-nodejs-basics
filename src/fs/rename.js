@@ -1,6 +1,6 @@
 import { rename } from "node:fs/promises";
-import { getPathFromFiles } from "./getPath.js";
-import { errorMsg } from "./getErrorMsg.js";
+import { getPathFromFiles } from "../getPath.js";
+import { errorMsg } from "../getErrorMsg.js";
 
 const renameFile = async () => {
   const wrongFilenamePath = getPathFromFiles(
