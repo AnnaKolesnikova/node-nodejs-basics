@@ -14,7 +14,7 @@ const calculateHash = async () => {
     hash.update(fileContent);
     console.log(hash.digest("hex"));
   } catch (err) {
-    throw new Error(err);
+    throw err;
   }
 };
 
