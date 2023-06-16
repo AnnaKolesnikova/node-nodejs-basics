@@ -11,7 +11,7 @@ const compress = async () => {
   const compressedFileSrc = getPathFromFiles(import.meta.url, "archive.gz");
   const inputFile = createReadStream(fileToCompressSrc);
   const outputFile = createWriteStream(compressedFileSrc);
-  inputFile.pipe(outputFile);
+  inputFile.pipe(gzip).pipe(outputFile);
 };
 
 await compress();
