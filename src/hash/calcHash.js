@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 const calculateHash = async () => {
   const fileToCalculateHashFor = getPathFromFiles(
     import.meta.url,
+    "files",
     "fileToCalculateHashFor.txt"
   );
 

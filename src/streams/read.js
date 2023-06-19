@@ -3,7 +3,11 @@ import { getPathFromFiles } from "../getPath.js";
 
 const read = async () => {
   try {
-    const fileToReadSrc = getPathFromFiles(import.meta.url, "fileToRead.txt");
+    const fileToReadSrc = getPathFromFiles(
+      import.meta.url,
+      "files",
+      "fileToRead.txt"
+    );
     createReadStream(fileToReadSrc).pipe(process.stdout);
   } catch (err) {
     throw new Error(err);

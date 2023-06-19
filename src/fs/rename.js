@@ -5,10 +5,12 @@ import { errorMsg } from "../getErrorMsg.js";
 const renameFile = async () => {
   const wrongFilenamePath = getPathFromFiles(
     import.meta.url,
+    "files",
     "wrongFilename.txt"
   );
   const properFilenamePath = getPathFromFiles(
     import.meta.url,
+    "files",
     "properFilename.md"
   );
 

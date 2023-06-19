@@ -1,10 +1,10 @@
 import { mkdir, readdir, copyFile } from "node:fs/promises";
-import { getFolderPath } from "../getPath.js";
+import { getPathFromFiles } from "../getPath.js";
 import { errorMsg } from "../getErrorMsg.js";
 
 const copy = async () => {
-  const src = getFolderPath(import.meta.url, "/files");
-  const destination = getFolderPath(import.meta.url, "/files_copy");
+  const src = getPathFromFiles(import.meta.url, "/files", "");
+  const destination = getPathFromFiles(import.meta.url, "/files_copy", "");
 
   try {
     await mkdir(destination);

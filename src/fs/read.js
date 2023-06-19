@@ -3,7 +3,11 @@ import { readFile } from "node:fs/promises";
 import { errorMsg } from "../getErrorMsg.js";
 
 const read = async () => {
-  const fileToRead = getPathFromFiles(import.meta.url, "fileToRead.txt");
+  const fileToRead = getPathFromFiles(
+    import.meta.url,
+    "files",
+    "fileToRead.txt"
+  );
 
   try {
     const fileContents = await readFile(fileToRead, { encoding: "utf8" });

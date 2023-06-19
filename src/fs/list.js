@@ -1,9 +1,9 @@
-import { getFolderPath } from "../getPath.js";
+import { getPathFromFiles } from "../getPath.js";
 import { readdir } from "node:fs/promises";
 import { errorMsg } from "../getErrorMsg.js";
 
 const list = async () => {
-  const src = getFolderPath(import.meta.url, "/files");
+  const src = getPathFromFiles(import.meta.url, "files", "");
   const files = await readdir(src);
 
   try {

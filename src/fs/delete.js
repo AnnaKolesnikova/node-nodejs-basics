@@ -3,7 +3,11 @@ import { getPathFromFiles } from "../getPath.js";
 import { errorMsg } from "../getErrorMsg.js";
 
 const remove = async () => {
-  const fileToRemove = getPathFromFiles(import.meta.url, "fileToRemove.txt");
+  const fileToRemove = getPathFromFiles(
+    import.meta.url,
+    "files",
+    "fileToRemove.txt"
+  );
   try {
     await rm(fileToRemove);
   } catch (err) {

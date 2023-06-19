@@ -3,7 +3,7 @@ import { getPathFromFiles } from "../getPath.js";
 import { errorMsg } from "../getErrorMsg.js";
 
 const create = async () => {
-  const filesSrc = getPathFromFiles(import.meta.url, "fresh.txt");
+  const filesSrc = getPathFromFiles(import.meta.url, "files", "fresh.txt");
   const fileContent = "I am fresh and young";
 
   try {
