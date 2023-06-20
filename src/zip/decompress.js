@@ -4,9 +4,14 @@ import { getPathFromFiles } from "../getPath.js";
 
 const decompress = async () => {
   const unzip = zlib.createUnzip();
-  const compressedFileSrc = getPathFromFiles(import.meta.url, "archive.gz");
+  const compressedFileSrc = getPathFromFiles(
+    import.meta.url,
+    "files",
+    "archive.gz"
+  );
   const decompressedFileSrc = getPathFromFiles(
     import.meta.url,
+    "files",
     "fileToCompress.txt"
   );
 

@@ -6,9 +6,14 @@ const compress = async () => {
   const gzip = zlib.createGzip();
   const fileToCompressSrc = getPathFromFiles(
     import.meta.url,
+    "files",
     "fileToCompress.txt"
   );
-  const compressedFileSrc = getPathFromFiles(import.meta.url, "archive.gz");
+  const compressedFileSrc = getPathFromFiles(
+    import.meta.url,
+    "files",
+    "archive.gz"
+  );
   const inputFile = createReadStream(fileToCompressSrc);
   const outputFile = createWriteStream(compressedFileSrc);
   inputFile.pipe(gzip).pipe(outputFile);
